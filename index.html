@@ -1,1 +1,465 @@
-<!DOCTYPE html> <html> <head> <title>Broad World View - Hologram Terminal</title> <style> body { background: radial-gradient(circle at center, #0a1128 0%, #020617 100%); font-family: 'Courier New', Courier, monospace; display: flex; flex-direction: column; align-items: center; min-height: 100vh; margin: 0; padding: 40px 20px; box-sizing: border-box; color: #00f2fe; overflow-x: hidden; } /* 🤖 SCI-FI SCANLINE OVERLAY EFFECT 🤖 */ body::before { content: " "; display: block; position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 242, 254, 0.06) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03)); z-index: 9999; background-size: 100% 4px, 6px 100%; pointer-events: none; } .header-card { background: rgba(0, 242, 254, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 40px; border-radius: 24px; border: 1px solid rgba(0, 242, 254, 0.25); box-shadow: 0 0 30px rgba(0, 242, 254, 0.1), inset 0 0 20px rgba(0, 242, 254, 0.1); text-align: center; max-width: 500px; width: 100%; margin-bottom: 40px; position: relative; } /* Hologram Laser Corner Accents */ .header-card::before { content: ''; position: absolute; top: 10px; left: 10px; width: 15px; height: 15px; border-top: 2px solid #00f2fe; border-left: 2px solid #00f2fe; } .header-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 15px; height: 15px; border-bottom: 2px solid #00f2fe; border-right: 2px solid #00f2fe; } h1 { color: #00f2fe; margin: 0 0 15px 0; display: flex; flex-direction: column; align-items: center; gap: 20px; text-shadow: 0 0 15px rgba(0, 242, 254, 0.8), 0 0 30px rgba(0, 242, 254, 0.4); font-size: 32px; letter-spacing: 2px; } p { color: #8fa0cc; line-height: 1.6; font-family: 'Segoe UI', sans-serif; } /* 🪐 NATURAL 3D EARTH ROTATION EFFECT 🪐 */ .globe-container { width: 100px; height: 100px; position: relative; display: flex; justify-content: center; align-items: center; /* Creates the projection sphere glow behind the map */ background: radial-gradient(circle, rgba(0,242,254,0.2) 0%, rgba(0,0,0,0) 70%); border-radius: 50%; box-shadow: 0 0 25px rgba(0, 242, 254, 0.4); } .holo-globe { font-size: 75px; line-height: 1; display: inline-block; filter: drop-shadow(0 0 12px rgba(0, 242, 254, 0.9)) saturate(1.8); /* This triggers a native 3D rotation flip on the Y axis, simulating natural orbit */ animation: naturalOrbit 8s linear infinite, holoFlicker 0.15s ease-in-out infinite alternate; } /* Rotates sideways (Natural Orbit) instead of a flat wheel spin */ @keyframes naturalOrbit { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg); } } /* Random laser flicker effect from Iron Man tech screens */ @keyframes holoFlicker { 0% { opacity: 0.93; filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.8)) skewX(-0.5deg); } 100% { opacity: 1; filter: drop-shadow(0 0 18px rgba(0, 242, 254, 1.2)) skewX(0.5deg); } } .shop-title { color: #00f2fe; text-shadow: 0 0 10px rgba(0, 242, 254, 0.6); margin-bottom: 25px; font-size: 24px; letter-spacing: 3px; } .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 900px; width: 100%; } .product-card { background: rgba(0, 242, 254, 0.01); border: 1px solid rgba(0, 242, 254, 0.15); border-radius: 16px; padding: 20px; text-align: center; backdrop-filter: blur(5px); transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); display: flex; flex-direction: column; justify-content: space-between; position: relative; } .product-card:hover { transform: scale(1.03); border-color: #00f2fe; background: rgba(0, 242, 254, 0.05); box-shadow: 0 0 25px rgba(0, 242, 254, 0.3), inset 0 0 15px rgba(0, 242, 254, 0.1); } .product-image-placeholder { background: rgba(0, 242, 254, 0.05); border: 1px solid rgba(0, 242, 254, 0.3); height: 140px; border-radius: 12px; display: flex; justify-content: center; align-items: center; font-size: 45px; margin-bottom: 15px; box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.2); } .product-name { color: white; font-size: 18px; margin: 10px 0; font-weight: bold; letter-spacing: 1px; } .product-price { color: #00f2fe; font-weight: bold; font-size: 20px; margin-bottom: 20px; text-shadow: 0 0 5px rgba(0, 242, 254, 0.5); } .buy-button { display: block; padding: 12px 20px; background: transparent; color: #00f2fe; border: 1px solid #00f2fe; text-decoration: none; border-radius: 8px; font-weight: bold; letter-spacing: 1px; transition: all 0.2s ease; box-shadow: 0 0 10px rgba(0, 242, 254, 0.1); } .buy-button:hover { background: #00f2fe; color: #020617; box-shadow: 0 0 20px rgba(0, 242, 254, 0.6); } </style> </head> <body> <!-- Main Stark-Style Interface Card --> <div class="header-card"> <h1> <div class="globe-container"> <span class="holo-globe">🌍</span> </div> BROAD WORLD VIEW </h1> <p>[SYSTEM STATUS: ONLINE] Welcome to the core holographic affiliate mainframe. Select a node module below to intercept product telemetry.</p> </div> <h2 class="shop-title">// ACCESS_MODULES: RECOMMENDED</h2> <!-- Product Grid --> <div class="product-grid"> <div class="product-card"> <div> <div class="product-image-placeholder">📱</div> <div class="product-name">QUANTUM GADGET</div> <div class="product-price">$99.99</div> </div> <a href="https://amazon.com" target="_blank" class="buy-button">LAUNCH_LINK</a> </div> <div class="product-card"> <div> <div class="product-image-placeholder">🎧</div> <div class="product-name">SONIC AUDIO LABS</div> <div class="product-price">$149.99</div> </div> <a href="https://amazon.com" target="_blank" class="buy-button">LAUNCH_LINK</a> </div> <div class="product-card"> <div> <div class="product-image-placeholder">🎒</div> <div class="product-name">TACTICAL CORE PACK</div> <div class="product-price">$79.99</div> </div> <a href="https://amazon.com" target="_blank" class="buy-button">LAUNCH_LINK</a> </div> </div> </body> </html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Broad World View - Hologram Terminal</title>
+    <style>
+        body {
+            background: radial-gradient(circle at center, #0a1128 0%, #020617 100%);
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            color: #00f2fe;
+            overflow-x: hidden;
+        }
+        
+        /* 🤖 SCI-FI SCANLINE OVERLAY EFFECT 🤖 */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 242, 254, 0.06) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            z-index: 9999;
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
+        }
+
+        /* 🌐 LANGUAGE INTERFACE SELECTION MATRIX 🌐 */
+        .language-matrix {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            max-width: 800px;
+            margin-bottom: 25px;
+            z-index: 10;
+        }
+
+        .lang-node {
+            background: rgba(0, 242, 254, 0.02);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            color: #8fa0cc;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-node:hover, .lang-node.active {
+            color: #020617;
+            background: #00f2fe;
+            border-color: #00f2fe;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+            font-weight: bold;
+        }
+
+        .header-card {
+            background: rgba(0, 242, 254, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 242, 254, 0.25);
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.1), inset 0 0 20px rgba(0, 242, 254, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        /* Hologram Laser Corner Accents */
+        .header-card::before {
+            content: '';
+            position: absolute;
+            top: 10px; left: 10px;
+            width: 15px; height: 15px;
+            border-top: 2px solid #00f2fe;
+            border-left: 2px solid #00f2fe;
+        }
+        .header-card::after {
+            content: '';
+            position: absolute;
+            bottom: 10px; right: 10px;
+            width: 15px; height: 15px;
+            border-bottom: 2px solid #00f2fe;
+            border-right: 2px solid #00f2fe;
+        }
+
+        /* Hologram Projectors Core Flex */
+        .projector-bay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            color: #00f2fe;
+            margin: 0 0 15px 0;
+            text-shadow: 0 0 15px rgba(0, 242, 254, 0.8);
+            font-size: 32px;
+            letter-spacing: 2px;
+        }
+
+        p {
+            color: #8fa0cc;
+            line-height: 1.6;
+            font-family: 'Segoe UI', sans-serif;
+            min-height: 50px;
+        }
+
+        /* 👩‍💻 ANIMATED FEMALE ASSISTANT HOLOGRAM 👩‍💻 */
+        .assistant-container {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .assistant-avatar {
+            width: 80px;
+            height: 80px;
+            border: 2px dashed rgba(0, 242, 254, 0.7);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: rgba(0, 242, 254, 0.05);
+            animation: assistantPulse 2s ease-in-out infinite alternate, masterFlicker 0.15s ease-in-out infinite alternate;
+        }
+
+        /* Dynamic audio wave telemetry rings radiating from the avatar */
+        .assistant-avatar::before {
+            content: '';
+            position: absolute;
+            width: 110%; height: 110%;
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 50%;
+            animation: radarPing 3s linear infinite;
+        }
+
+        .avatar-svg {
+            width: 50px;
+            height: 50px;
+            fill: #00f2fe;
+            filter: drop-shadow(0 0 8px #00f2fe);
+        }
+
+        /* 🪐 PURE CSS HOLOGRAPHIC WIREFRAME GLOBE 🪐 */
+        .globe-container {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .globe-pedestal, .assistant-pedestal {
+            position: absolute;
+            bottom: -15px;
+            width: 90px;
+            height: 14px;
+            background: transparent;
+            border: 2px solid rgba(0, 242, 254, 0.6);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.8), inset 0 0 10px rgba(0, 242, 254, 0.4);
+            transform: rotateX(70deg);
+        }
+
+        .holo-wireframe-globe {
+            width: 90px;
+            height: 90px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: globalRotation 12s linear infinite, masterFlicker 0.2s ease-in-out infinite alternate;
+        }
+
+        .ring {
+            position: absolute;
+            width: 100%; height: 100%;
+            border: 1px dashed rgba(0, 242, 254, 0.6);
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(0, 242, 254, 0.3);
+            box-sizing: border-box;
+        }
+
+        .ring:nth-child(1) { transform: rotateY(0deg); border-style: solid; }
+        .ring:nth-child(2) { transform: rotateY(30deg); }
+        .ring:nth-child(3) { transform: rotateY(60deg); }
+        .ring:nth-child(4) { transform: rotateY(90deg); border-style: solid; }
+        .ring:nth-child(5) { transform: rotateY(120deg); }
+        .ring:nth-child(6) { transform: rotateY(150deg); }
+        .ring:nth-child(7) { transform: rotateX(90deg); border-style: solid; }
+        .ring:nth-child(8) { transform: translateY(-22px) rotateX(90deg) scale(0.86); }
+        .ring:nth-child(9) { transform: translateY(22px) rotateX(90deg) scale(0.86); }
+        .ring:nth-child(10) { transform: translateY(-36px) rotateX(90deg) scale(0.6); }
+        .ring:nth-child(11) { transform: translateY(36px) rotateX(90deg) scale(0.6); }
+
+        @keyframes globalRotation {
+            0% { transform: rotateX(12deg) rotateY(0deg); }
+            100% { transform: rotateX(12deg) rotateY(360deg); }
+        }
+
+        @keyframes assistantPulse {
+            0% { transform: translateY(0px) scale(1); }
+            100% { transform: translateY(-8px) scale(1.02); }
+        }
+
+        @keyframes radarPing {
+            0% { transform: scale(0.9); opacity: 0.8; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+
+        @keyframes masterFlicker {
+            0% { opacity: 0.88; filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.7)) skewX(-0.3deg); }
+            100% { opacity: 1; filter: drop-shadow(0 0 16px rgba(0, 242, 254, 1.1)) skewX(0.3deg); }
+        }
+
+        .shop-title {
+            color: #00f2fe;
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
+            margin-bottom: 25px;
+            font-size: 22px;
+            letter-spacing: 3px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .product-card {
+            background: rgba(0, 242, 254, 0.01);
+            border: 1px solid rgba(0, 242, 254, 0.15);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: scale(1.03);
+            border-color: #00f2fe;
+            background: rgba(0, 242, 254, 0.05);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.3), inset 0 0 15px rgba(0, 242, 254, 0.1);
+        }
+
+        .product-image-placeholder {
+            background: rgba(0, 242, 254, 0.05);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            height: 140px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 45px;
+            margin-bottom: 15px;
+            box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.2);
+        }
+
+        .product-name {
+            color: white;
+            font-size: 15px;
+            margin: 10px 0;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-price {
+            color: #00f2fe;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 20px;
+
+text-shadow: 0 0 5px rgba(0, 242, 254, 0.5);
+}
+.buy-button {
+display: block;
+padding: 12px 20px;
+background: transparent;
+color: #00f2fe;
+border: 1px solid #00f2fe;
+text-decoration: none;
+border-radius: 8px;
+font-weight: bold;
+letter-spacing: 1px;
+transition: all 0.2s ease;
+box-shadow: 0 0 10px rgba(0, 242, 254, 0.1);
+}
+.buy-button:hover {
+background: #00f2fe;
+color: #020617;
+box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
+}
+
+
+English
+Español
+Português
+Français
+Italiano
+Deutsch
+العربية
+हिन्दी
+日本語
+한국어
+简体中文
+廣東話
+BROAD WORLD VIEW
+[A.I. INTERFACE: ONLINE] Hello, I am your terminal assistant. Select an overlay node module below to map telemetry metrics.
+// ACCESS_MODULES: RECOMMENDED
+✏️
+School Supplies Kit
+$14.99
+
+LAUNCH_LINK
+📓
+Five Star Notebook
+QA$6.19
+
+LAUNCH_LINK
+🎒
+JanSport Backpack
+$34.95
+
+LAUNCH_LINK
+
+const translations = {
+en: {
+desc: "[A.I. INTERFACE: ONLINE] Hello, I am your terminal assistant. Select an overlay node module below to map telemetry metrics.",
+section: "// ACCESS_MODULES: RECOMMENDED",
+p1: "School Supplies Kit",
+p2: "Five Star Notebook",
+p3: "JanSport Backpack",
+btn: "LAUNCH_LINK"
+},
+es: {
+desc: "[INTERFAZ I.A.: EN LÍNEA] Hola, soy tu asistente de terminal. Selecciona un módulo de nodo a continuación para rastrear métricas.",
+section: "// MÓDULOS_DE_ACCESO: RECOMENDADO",
+p1: "Kit de Útiles Escolares",
+p2: "Cuaderno Five Star",
+p3: "Mochila JanSport",
+btn: "INICIAR_ENLACE"
+},
+pt: {
+desc: "[INTERNET I.A.: ONLINE] Olá, sou a sua assistente de terminal. Selecione um módulo de nó abaixo para mapear métricas.",
+section: "// MÓDULOS_DE_ACESSO: RECOMENDADO",
+p1: "Kit de Materiais Escolares",
+p2: "Caderno Five Star",
+p3: "Mochila JanSport",
+btn: "ABRIR_LINK"
+},
+fr: {
+desc: "[INTERFACE I.A.: EN LIGNE] Bonjour, je suis votre assistante virtuelle. Sélectionnez un module ci-dessous pour lancer la télémétrie.",
+section: "// MODULES_D_ACCÈS: RECOMMANDÉ",
+p1: "Kit de Fournitures Scolaires",
+p2: "Cahier Five Star",
+p3: "Sac à Dos JanSport",
+btn: "LANCER_LIEN"
+},
+it: {
+desc: "[INTERFACCIA I.A.: ONLINE] Ciao, sono la tua assistente di terminale. Seleziona un modulo nodo qui sotto per avviare la telemetria.",
+section: "// MODULI_DI_ACCESSO: CONSIGLIATO",
+p1: "Kit di Cancelleria Scuola",
+p2: "Quaderno Five Star",
+p3: "Zaino JanSport",
+btn: "APRI_LINK"
+},
+de: {
+desc: "[KI-SCHNITTSTELLE: ONLINE] Hallo, ich bin Ihre Terminal-Assistentin. Wählen Sie unten ein Knotenmodul aus, um Daten zu laden.",
+section: "// ZUGRIFFS_MODULE: EMPFOHLEN",
+p1: "Schulbedarf-Set",
+p2: "Five Star Notizbuch",
+p3: "JanSport Rucksack",
+btn: "LINK_STARTEN"
+},
+ar: {
+desc: "[واجهة الذكاء الاصطناعي: متصل] مرحبًا، أنا مساعدتك الافتراضية. حدد وحدة تتبع من الأسفل لمراقبة البيانات.",
+section: "// وحدات_الوصول: موصى به",
+p1: "مجموعة أدوات مدرسية",
+p2: "دفتر فايف ستار",
+p3: "حقيبة ظهر جان سبورت",
+btn: "إطلاق_الرابط"
+},
+hi: {
+desc: "[एआई इंटरफ़ेस: ऑनलाइन] नमस्ते, मैं आपकी टर्मिनल सहायक हूँ। डेटा स्ट्रीम मैप करने के लिए कृपया नीचे एक नोड चुनें।",
+section: "// एक्सेस_मॉड्यूल: अनुशंसित",
+p1: "स्कूल आपूर्ति किट",
+p2: "फाइव स्टार नोटबुक",
+p3: "जैनस्पोर्ट बैकपैक",
+btn: "लिंक_खولें"
+},
+ja: {
+desc: "[AIインターフェース: オンライン] こんにちは、私は端末のアシスタントです。解析モジュールを選択してデータを読み込んでください。",
+section: "// アクセスモジュール: 推奨",
+p1: "学用品文房具セット",
+p2: "Five Star ノート",
+p3: "JanSport リュックサック",
+btn: "リンク起動"
+},
+ko: {
+desc: "[AI 인터페이스: 온라인] 안녕하십니까, 터미널 어시스턴트입니다. 원격 데이터 맵을 확인하려면 아래 노드를 선택하십시오.",
+section: "// 액세스_모듈: 추천",
+p1: "학교 학용품 세트",
+p2: "파이브 스타 노트",
+p3: "잔스포츠 백팩",
+btn: "링크_실행"
+},
+"zh-cn": {
+desc: "[AI 智能助手: 在线] 您好，我是您的全息终端助手。请在下方选择控制节点以加载商品 telemetry 监控。",
+section: "// 访问模块: 推荐",
+p1: "开学文具套装",
+p2: "Five Star 线圈笔记本",
+p3: "JanSport 双肩背包",
+btn: "启动链接"
+},
+"zh-hk": {
+desc: "[AI 智能助手: 在線] 您好，我是您的全息終端助手。請在下方選擇控制節點以加載商品 telemetry 監控。",
+section: "// 訪問模組: 推薦",
+p1: "開學文具套裝",
+p2: "Five Star 線圈筆記本",
+p3: "JanSport 雙肩背包",
+btn: "啟動連結"
+}
+};
+function switchLanguage(lang, element) {
+document.querySelectorAll('.lang-node').forEach(node => node.classList.remove('active'));
+element.classList.add('active');
+const currentData = translations[lang];
+document.getElementById('system-desc').innerText = currentData.desc;
+document.getElementById('section-title').innerText = currentData.section;
+document.getElementById('p1-name').innerText = currentData.p1;
+document.getElementById('p2-name').innerText = currentData.p2;
+document.getElementById('p3-name').innerText = currentData.p3;
+document.getElementById('p1-btn').innerText = currentData.btn;
+document.getElementById('p2-btn').innerText = currentData.btn;
+document.getElementById('p3-btn').innerText = currentData.btn;
+}
