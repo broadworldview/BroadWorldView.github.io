@@ -1,2 +1,65 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Broad World View - Hologram Terminal</title> <style> body { background: radial-gradient(circle at center, #0a1128 0%, #020617 100%) !important; font-family: 'Courier New', Courier, monospace; display: flex; flex-direction: column; align-items: center; min-height: 100vh; margin: 0; padding: 40px 20px; box-sizing: border-box; color: #00f2fe; overflow-x: hidden; } .language-matrix { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 800px; margin-bottom: 25px; position: relative; z-index: 100; } .lang-node { background: rgba(0, 242, 254, 0.05); border: 1px solid rgba(0, 242, 254, 0.3); color: #8fa0cc; padding: 8px 16px; border-radius: 6px; font-size: 13px; cursor: pointer; } .lang-node.active { color: #020617; background: #00f2fe; font-weight: bold; box-shadow: 0 0 15px #00f2fe; } .header-card { background: rgba(0, 242, 254, 0.03); border: 1px solid rgba(0, 242, 254, 0.25); padding: 40px; border-radius: 24px; text-align: center; max-width: 600px; width: 100%; margin-bottom: 40px; box-sizing: border-box; } .projector-bay { display: flex; justify-content: center; align-items: center; gap: 40px; margin-bottom: 20px; } h1 { color: #00f2fe; font-size: 32px; letter-spacing: 2px; margin: 0 0 15px 0; } p { color: #8fa0cc; line-height: 1.6; font-family: sans-serif; } .assistant-container, .globe-container { width: 100px; height: 100px; border: 1px dashed #00f2fe; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 40px; background: rgba(0, 242, 254, 0.05); } .shop-title { color: #00f2fe; margin-bottom: 25px; font-size: 22px; letter-spacing: 3px; } .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; max-width: 900px; width: 100%; box-sizing: border-box; } .product-card { background: rgba(0, 242, 254, 0.02); border: 1px solid rgba(0, 242, 254, 0.2); border-radius: 16px; padding: 20px; text-align: center; } .product-image-placeholder { font-size: 45px; margin-bottom: 15px; } .product-name { color: white; font-size: 16px; margin: 10px 0; font-weight: bold; } .product-price { color: #00f2fe; font-size: 20px; margin-bottom: 20px; font-weight: bold; } .buy-button { display: inline-block; padding: 12px 24px; color: #00f2fe; border: 1px solid #00f2fe; text-decoration: none; border-radius: 8px; font-weight: bold; } </style> </head> <body> <div class="language-matrix"> <div class="lang-node active" onclick="switchLanguage('en', this)">English</div> <div class="lang-node" onclick="switchLanguage('es', this)">Español</div> </div> <div class="header-card"> <div class="projector-bay"> <div class="globe-container">🌍</div> <div class="assistant-container">👩‍💼</div> </div> <h1>BROAD WORLD VIEW</h1> <p id="system-desc">[A.I. INTERFACE: ONLINE] Hello, I am your terminal assistant. Select a language module above.</p> </div> <h2 id="section-title" class="shop-title">// ACCESS_MODULES: RECOMMENDED</h2> <div class="product-grid"> <div class="product-card"> <div class="product-image-placeholder">✏️</div> <div id="p1-name" class="product-name">School Supplies Kit</div> <div class="product-price">$14.99</div> <a id="p1-btn" href="https://amazon.com" target="_blank" class="buy-button">LAUNCH_LINK</a> </div> <div class="product-card"> <div class="product-image-placeholder">🎒</div> <div id="p2-name" class="product-name">JanSport Backpack</div> <div class="product-price">$34.95</div> <a id="p2-btn" href="https://amazon.com" target="_blank" class="buy-button">LAUNCH_LINK</a> </div> </div> <script> const translations = { en: { desc: "[A.I. INTERFACE: ONLINE] Hello, I am your terminal assistant. Select a language module above.", section: "// ACCESS_MODULES: RECOMMENDED", p1: "School Supplies Kit", p2: "JanSport Backpack", btn: "LAUNCH_LINK" }, es: { desc: "[INTERFAZ I.A.: EN LÍNEA] Hola, soy tu asistente de terminal. Selecciona un módulo de idioma arriba.", section: "// MÓDULOS_DE_ACCESO: RECOMENDADO", p1: "Kit de Útiles Escolares", p2: "Mochila JanSport", btn: "INICIAR_ENLACE" } }; function switchLanguage(lang, element) { document.querySelectorAll('.lang-node').forEach(node => node.classList.remove('active')); element.classList.add('active'); const data = translations[lang]; document.getElementById('system-desc').innerText = data.desc; document.getElementById('section-title').innerText = data.section; document.getElementById('p1-name').innerText = data.p1; document.getElementById('p2-name').innerText = data.p2; document.getElementById('p1-btn').innerText = data.btn; document.getElementById('p2-btn').innerText = data.btn; } </script> </body> </html>
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hearth &amp; Find — Gift Picks for the Season</title>
+<meta name="description" content="Hand-picked gift ideas for Black Friday and Christmas, linked out to Amazon and eBay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="/">Hearth &amp; Find</a>
+    <nav class="cat-nav" id="cat-nav" aria-label="Shop by category"></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <p class="hero-kicker">Season's picks, 2026</p>
+    <h1>Gifts worth the click,<br>found before you had to look.</h1>
+    <p class="hero-sub">A running list of the pieces we'd actually buy this year — cozy home, tech that earns its shelf space, and stocking-fillers that don't feel like filler. Every link goes straight to Amazon or eBay.</p>
+    <a class="hero-cta" href="#shop">See this week's picks</a>
+  </div>
+</section>
+
+<main class="wrap" id="shop">
+  <div id="product-sections"></div>
+</main>
+
+<section class="how-it-works">
+  <div class="wrap how-inner">
+    <h2>How this site works</h2>
+    <div class="how-grid">
+      <div>
+        <h3>We don't sell or ship anything</h3>
+        <p>Every "View" button hands you off to Amazon or eBay. They take payment, they ship it, they handle returns.</p>
+      </div>
+      <div>
+        <h3>We may earn a small commission</h3>
+        <p>If you buy after clicking through, this site can earn a share of the sale at no extra cost to you.</p>
+      </div>
+      <div>
+        <h3>Prices live on the retailer's site</h3>
+        <p>What's shown here is a snapshot — always check the current price and availability on the product page.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="disclosure">Affiliate disclosure: As an Amazon Associate, Hearth &amp; Find earns from qualifying purchases. This site may also earn a commission from eBay Partner Network links. This comes at no additional cost to you.</p>
+    <p class="copyright">&copy; <span id="year"></span> Hearth &amp; Find</p>
+  </div>
+</footer>
+
+<script src="products.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
